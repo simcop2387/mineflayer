@@ -763,10 +763,10 @@ void Game::animateDigging()
 
 void Game::doPhysics(float delta_seconds)
 {
+    QMutexLocker locker(&m_mutex);
+
     if (delta_seconds < std::numeric_limits<float>::epsilon())
         return; // too fast!!
-
-    QMutexLocker locker(&m_mutex);
 
     // derive xy movement vector from controls
     int movement_right = 0;
