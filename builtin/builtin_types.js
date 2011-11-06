@@ -28,6 +28,12 @@ mf.Point.prototype.scaled = function(scalar) {
 mf.Point.prototype.abs = function() {
     return new mf.Point(Math.abs(this.x), Math.abs(this.y), Math.abs(this.z));
 };
+mf.Point.prototype.min = function(other) {
+    return new mf.Point(Math.min(this.x, other.x), Math.min(this.y, other.y), Math.min(this.z, other.z));
+};
+mf.Point.prototype.max = function(other) {
+    return new mf.Point(Math.max(this.x, other.x), Math.max(this.y, other.y), Math.max(this.z, other.z));
+};
 /** euclidean distance */
 mf.Point.prototype.distanceTo = function(other) {
     var dx = other.x - this.x;

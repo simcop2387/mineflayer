@@ -143,10 +143,11 @@ mf.include("quitter.js");
             };
 
             function doTheNavigation() {
+                var start_time = new Date().getTime();
                 responder_func("looking for a path from " + mf.self().position.floored() + " to " + end.floored() + "...");
                 navigator.navigateTo(end, {
                     "end_radius": end_radius,
-                    "timeout_milliseconds": 10 * 1000,
+                    "timeout_milliseconds": 20 * 1000,
                     "cant_find_func": function() {
                         responder_func("can't find a path");
                         task_manager.done();
@@ -156,7 +157,7 @@ mf.include("quitter.js");
                         startMonitor();
                     },
                     "path_found_func": function(path) {
-                        responder_func("i can get there in " + path.length + " moves");
+                        responder_func("i can get there in " + path.length + " moves (" + (new Date().getTime() - start_time) + "ms)");
                         startMonitor();
                     },
                     "arrived_func": function() {

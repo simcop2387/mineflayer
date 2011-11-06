@@ -183,6 +183,16 @@ Classes
         :rtype: :class:`Point`
         :returns: A new point with each term the absolute value of its former value.
 
+    .. function:: min(other)
+
+        :rtype: :class:`Point`
+        :returns: A new point with each term the Math.min value of this and the other's corresponding term.
+
+    .. function:: max(other)
+
+        :rtype: :class:`Point`
+        :returns: A new point with each term the Math.max value of this and the other's corresponding term.
+
     .. function:: distanceTo(other)
 
         :rtype: Number
