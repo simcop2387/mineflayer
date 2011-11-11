@@ -1,4 +1,3 @@
 *.pro.user*
 config.pro
-build/
-example_plugin-build/
+example_plugin-build*/
