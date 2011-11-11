@@ -4,6 +4,7 @@
 #include "StdinReader.h"
 #include "Vector3D.h"
 #include "Game.h"
+#include "PluginLoader.h"
 
 #ifdef MINEFLAYER_GUI_ON
 #include <QScriptEngineDebugger>

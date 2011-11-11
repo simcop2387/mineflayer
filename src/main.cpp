@@ -100,6 +100,9 @@ int main(int argc, char *argv[])
 #endif
 
     MetaTypes::registerMetaTypes();
+
+    PluginLoader::init();
+
     if (! script_filename.isEmpty()) {
         ScriptRunner runner(url, script_filename, script_args, script_debug, lib_path);
         runner.bootstrap();

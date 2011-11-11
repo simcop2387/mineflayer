@@ -12,7 +12,6 @@
 
 #include <cmath>
 
-
 ScriptRunner::ScriptRunner(QUrl url, QString script_file, QStringList args, bool debug, QStringList lib_path) :
     QObject(NULL),
     m_url(url),
@@ -155,6 +154,10 @@ void ScriptRunner::bootstrap()
 
     hax_obj.setProperty("placeBlock", m_engine->newFunction(placeBlock));
     hax_obj.setProperty("activateBlock", m_engine->newFunction(activateBlock));
+
+    // run preload
+    foreach (Plugin * plugin, PluginLoader::plugins())
+        plugin->preload(m_engine, m_game);
 
     // run main script
     QString main_script_contents = internalReadFile(m_main_script_filename);

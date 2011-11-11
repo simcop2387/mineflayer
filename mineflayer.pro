@@ -15,7 +15,8 @@ SOURCES += src/main.cpp \
     src/Game.cpp \
     src/Item.cpp \
     src/Digger.cpp \
-    src/PhysicsDoer.cpp
+    src/PhysicsDoer.cpp \
+    src/PluginLoader.cpp
 
 HEADERS += \
     src/ScriptRunner.h \
@@ -32,7 +33,10 @@ HEADERS += \
     src/Block.h \
     src/Item.h \
     src/Digger.h \
-    src/PhysicsDoer.h
+    src/PhysicsDoer.h \
+    src/mineflayer_plugin.h \
+    src/PluginLoader.h \
+    src/Plugin.h
 
 RESOURCES += mineflayer.qrc
 DEFINES += MINEFLAYER_GUI_ON
@@ -44,6 +48,9 @@ unix {
     INSTALLS += target
 }
 
+# for native plugin support
+QMAKE_LFLAGS += -rdynamic
+
 # if you want to run in headless mode, uncomment the next line or put it
 # uncommented in config.pro
 # CONFIG += headless
@@ -54,6 +61,3 @@ headless {
     DEFINES -= MINEFLAYER_GUI_ON
     QT -= gui scripttools
 }
-
-
-
