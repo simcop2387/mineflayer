@@ -4,7 +4,7 @@ mf.include("block_finder.js");
 mf.include("inventory.js");
 
 (function() {
-    chat_commands.registerCommand("windows", function(speaker, args, responder_func) {
+    chat_commands.registerCommand("window", function(speaker, args, responder_func) {
         responder_func("Currently open window: " + mf.openWindow());
     });
 
@@ -26,7 +26,7 @@ mf.include("inventory.js");
             },
             arrived_func: function() {
                 mf.hax.activateBlock(point);
-                responder_func("Activated!");
+                responder_func("<Insert Zelda Chest Opened Sound>");
             }
         });
     });
@@ -38,13 +38,14 @@ mf.include("inventory.js");
         mf.openInventoryWindow();
         mf.onWindowOpened(function invOpen(window_type) {
             mf.removeHandler(mf.onWindowOpened, invOpen);
+            responder_func("Wow I'm carrying a ton of crap!");
         });
     });
 
     chat_commands.registerCommand("close", function close(speaker, args, responder_func) {
         if (mf.openWindow() !== mf.WindowType.None) {
             mf.closeWindow();
-            responder_func("Windows closed");
+            responder_func("Window closed");
         }
     });
 
@@ -57,7 +58,7 @@ mf.include("inventory.js");
     chat_commands.registerCommand("click", function(speaker, args, responder_func) {
         var slot = parseInt(args.shift());
         if (slot === NaN) {
-            responder_func("That's not a slot number!");
+            responder_func("That's not a slot number.  Idiot.");
             return;
         }
         var invType = inventory.Inventory;
@@ -70,4 +71,12 @@ mf.include("inventory.js");
         invType.clickSlot(slot, mf.MouseButton.Left);
         held(speaker, args, responder_func);
     }, 1, 2);
+
+    chat_commands.registerCommand("size", function(speaker, args, responder_func) {
+        if (mf.uniqueSlotCount() > 9000) {
+            responder_func("IT'S OVER 9000!");
+        } else { 
+            responder_func("The current unique window size is " + mf.uniqueSlotCount());
+        }
+    });
 })();
