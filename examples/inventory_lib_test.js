@@ -57,7 +57,7 @@ mf.include("inventory.js");
 
     chat_commands.registerCommand("click", function(speaker, args, responder_func) {
         var slot = parseInt(args.shift());
-        if (slot === NaN) {
+        if (isNaN(slot)) {
             responder_func("That's not a slot number.  Idiot.");
             return;
         }
