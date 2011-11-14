@@ -690,17 +690,34 @@ Cheating methods
 
 .. function:: clickOutsideWindow(button)
 
-   Simulates clicking outside of the open window.
+    Simulates clicking outside of the open window.
 
-   :param mf.MouseButton button: Which mouse button to simulate clicking with.
+    :param mf.MouseButton button: Which mouse button to simulate clicking with.
+
+.. function:: uniqueSlotCount()
+
+    :returns: The number of slots for the unique section of the currently open window.
+    :rtype: Number
+
+    See the diagrams in :func:`clickUniqueSlot`.
+
+.. function:: heldItem()
+
+    :returns: The held item by the mouse.
+    :rtype: :class:`mf.Item`
 
 .. function:: openInventoryWindow()
 
-   Opens the inventory window. Will cause an :func:`onWindowOpened` event.
+    Opens the inventory window. Will cause an :func:`onWindowOpened` event.
 
 .. function:: closeWindow()
 
-   Closes the open window.
+    Closes the open window.
+
+.. function:: openWindow()
+
+    :returns: The currently open window type.
+    :rtype: :class:`mf.WindowType`
 
 .. function:: inventoryItem(slot)
 
