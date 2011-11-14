@@ -136,6 +136,7 @@ void ScriptRunner::bootstrap()
     mf_obj.setProperty("clickInventorySlot", m_engine->newFunction(clickInventorySlot));
     mf_obj.setProperty("clickUniqueSlot", m_engine->newFunction(clickUniqueSlot));
     mf_obj.setProperty("clickOutsideWindow", m_engine->newFunction(clickOutsideWindow));
+    mf_obj.setProperty("uniqueSlotCount", m_engine->newFunction(uniqueSlotCount));
     mf_obj.setProperty("heldItem", m_engine->newFunction(heldItem));
     mf_obj.setProperty("closeWindow", m_engine->newFunction(closeWindow));
     mf_obj.setProperty("openWindow", m_engine->newFunction(openWindow));
@@ -975,6 +976,16 @@ QScriptValue ScriptRunner::clickOutsideWindow(QScriptContext *context, QScriptEn
     bool right_click = right_click_value.toBool();
 
     return me->m_game->clickOutsideWindow(right_click);
+}
+
+QScriptValue ScriptRunner::uniqueSlotCount(QScriptContext *context, QScriptEngine *engine)
+{
+    ScriptRunner * me = (ScriptRunner *) engine->parent();
+    QScriptValue(error);
+    if (!me->argCount(context, error, 0))
+        return error;
+
+    return me->m_game->getUniqueSlotCount();
 }
 
 QScriptValue ScriptRunner::heldItem(QScriptContext *context, QScriptEngine *engine)

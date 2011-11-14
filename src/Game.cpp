@@ -1381,6 +1381,11 @@ void Game::handleTransaction(int window_id, int action_id, bool accepted)
     m_click_mutex.unlock();
 }
 
+int Game::getUniqueSlotCount()
+{
+    return m_unique_slots.size();
+}
+
 Item Game::getHeldItem()
 {
     return m_held_item;

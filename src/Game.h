@@ -183,6 +183,7 @@ public:
     bool clickInventorySlot(int slot_id, bool right_click); // slot_id [0, 35]
     bool clickUniqueSlot(int slot_id, bool right_click); // slot_id range depends on window
     bool clickOutsideWindow(bool right_click);
+    int getUniqueSlotCount();
     Item getHeldItem();
 
     void openInventoryWindow();

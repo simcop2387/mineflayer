@@ -145,6 +145,7 @@ private:
     static QScriptValue clickInventorySlot(QScriptContext * context, QScriptEngine * engine);
     static QScriptValue clickUniqueSlot(QScriptContext * context, QScriptEngine * engine);
     static QScriptValue clickOutsideWindow(QScriptContext * context, QScriptEngine * engine);
+    static QScriptValue uniqueSlotCount(QScriptContext * contest, QScriptEngine * engine);
     static QScriptValue heldItem(QScriptContext * context, QScriptEngine * engine);
     static QScriptValue closeWindow(QScriptContext * context, QScriptEngine * engine);
     static QScriptValue openWindow(QScriptContext * context, QScriptEngine * engine);
