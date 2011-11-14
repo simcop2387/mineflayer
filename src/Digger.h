@@ -32,7 +32,7 @@ private:
         NoTool,
         Pickaxe,
         Shovel,
-        Axe,
+        Axe
     };
 
     QHash<Item::Material, int> m_harvest_level;

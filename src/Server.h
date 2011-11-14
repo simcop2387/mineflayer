@@ -30,7 +30,7 @@ public:
         WaitingForNameVerificationStatus,
         WaitingForLoginResponseStatus,
         SuccessStatus,
-        SocketErrorStatus,
+        SocketErrorStatus
     };
 
     struct EntityPosition {

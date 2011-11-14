@@ -223,24 +223,24 @@ public:
         Map=0x166,
         Shears=0x167,
         GoldMusicDisc=0x8D0,
-        GreenMusicDisc=0x8D1,
+        GreenMusicDisc=0x8D1
     };
 
     enum WoodMetadata {
         NormalTrunkTexture = 0,
         RedwoodTrunkTexture = 1,
-        BirchTrunkTexture = 2,
+        BirchTrunkTexture = 2
     };
 
     enum LeavesMetadata {
         NormalLeavesTexture = 0,
         RedwoodLeavesTexture = 1,
-        BirchLeavesTexture = 2,
+        BirchLeavesTexture = 2
     };
 
     enum CoalMetadata {
         NormalCoal = 0,
-        CharCoal = 1,
+        CharCoal = 1
     };
 
     enum WoolMetadata {
@@ -259,7 +259,7 @@ public:
         BrownWool = 12,
         DarkGreenWool = 13,
         RedWool = 14,
-        BlackWool = 15,
+        BlackWool = 15
     };
 
     enum DyeMetadata {
@@ -278,7 +278,7 @@ public:
         LightBlueDye = 12,
         MagentaDye = 13,
         OrangeDye = 14,
-        BoneMealDye = 15,
+        BoneMealDye = 15
     };
 
     enum TorchMetadata {
@@ -286,7 +286,7 @@ public:
         NorthTorch = 1,
         WestTorch = 2,
         EastTorch = 3,
-        FloorTorch = 4,
+        FloorTorch = 4
     };
 
     enum MinecartTrackMetadata {
@@ -299,21 +299,21 @@ public:
         CornerNorthEastTrack = 6,
         CornerSouthEastTrack = 7,
         CornerSouthWestTrack = 8,
-        CornerNorthWestTrack = 9,
+        CornerNorthWestTrack = 9
     };
 
     enum LadderMetadata {
         EastLadder = 2,
         WestLadder = 3,
         NorthLadder = 4,
-        SouthLadder = 5,
+        SouthLadder = 5
     };
 
     enum StairsMetadata {
         AscendingSouthStairs = 0,
         AscendingNorthStairs = 1,
         AscendingWestStairs = 2,
-        AscendingEastStairs = 3,
+        AscendingEastStairs = 3
     };
 
     enum LeverPosition {
@@ -322,42 +322,42 @@ public:
         WallFacingWestLever = 2,
         WallFacingEastLever = 3,
         GroundFacingWestLever = 4, // lever points west when off
-        GroundFacingSouthLever = 5, // lever points south when off
+        GroundFacingSouthLever = 5 // lever points south when off
     };
 
     enum DoorHingeLocation {
         NorthEastDoorHinge = 0,
         SouthEastDoorHinge = 1,
         SouthWestDoorHinge = 2,
-        NirthWestDoorHinge = 3,
+        NirthWestDoorHinge = 3
     };
 
     enum ButtonDirection {
         SouthFacingButton = 1,
         NorthFacingButton = 2,
         WestFacingButton = 3,
-        EastFacingButton = 4,
+        EastFacingButton = 4
     };
 
     enum WallSignMetadata {
         EastFacingWallSign = 2,
         WestFacingWallSign = 3,
         NorthFacingWallSign = 4,
-        SouthFacingWallSign = 5,
+        SouthFacingWallSign = 5
     };
 
     enum FurnaceMetadata {
         EastFacingFurnace = 2,
         WestFacingFurnace = 3,
         NorthFacingFurnace = 4,
-        SouthFacingFurnace = 5,
+        SouthFacingFurnace = 5
     };
 
     enum PumpkinMetadata {
         EastFacingPumpkin = 0,
         SouthFacingPumpkin = 1,
         WestFacingPumpkin = 2,
-        NorthFacingPumpkin = 3,
+        NorthFacingPumpkin = 3
     };
 
     enum Material
@@ -387,7 +387,7 @@ public:
         PortalMaterial = 22,
         CakeMaterial = 23,
         DiamondMaterial = 24,
-        GoldMaterial = 25,
+        GoldMaterial = 25
     };
 
 

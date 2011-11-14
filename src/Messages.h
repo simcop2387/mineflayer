@@ -73,7 +73,7 @@ public:
         MapData=(qint8)0x83,
         IncrementStatistic=(qint8)0xC8,
         PlayerOnlineStatus=(qint8)0xC9,
-        DisconnectOrKick=(qint8)0xFF,
+        DisconnectOrKick=(qint8)0xFF
     };
 
     enum DiggingStatus {
@@ -81,7 +81,7 @@ public:
         ContinueDigging=1,
         AbortDigging=2,
         BlockBroken=3,
-        DropItem=4,
+        DropItem=4
     };
 
     enum BlockFaceDirection {
@@ -91,7 +91,7 @@ public:
         NegativeZ=2,
         PositiveZ=3,
         NegativeX=4,
-        PositiveX=5,
+        PositiveX=5
     };
 
     enum WindowType {
@@ -103,7 +103,7 @@ public:
         ChestWindow=0,
         CraftingTableWindow=1,
         FurnaceWindow=2,
-        DispenserWindow=3,
+        DispenserWindow=3
     };
 
     enum AnimationType {
@@ -112,7 +112,7 @@ public:
         DamageAnimation=2,
         CrouchAnimation=104,
         UncrouchAnimation=105,
-        DeathAnimation=55061, // random out-of-the-way number
+        DeathAnimation=55061 // random out-of-the-way number
     };
 
 
@@ -328,17 +328,17 @@ class LoginResponse : public IncomingResponse {
 public:
     enum ServerMode {
         Survival = 0,
-        Creative = 1,
+        Creative = 1
     };
     enum Dimension {
         Overworld = 0,
-        Nether = -1,
+        Nether = -1
     };
     enum Difficulty {
         Peaceful = 0,
         Easy = 1,
         Normal = 2,
-        Hard = 3,
+        Hard = 3
     };
     qint32 entity_id;
     QString _unused;
@@ -491,7 +491,7 @@ public:
         Uncrouch=2,
         LeaveBed=3,
         StartSprinting=4,
-        StopSprinting=5,
+        StopSprinting=5
     };
     qint32 entity_id;
     EntityActionType entity_action_type;
@@ -548,7 +548,7 @@ public:
         ThrownEgg=62,
         FallingSand=70,
         FallingGravel=71,
-        FishingFloat=90,
+        FishingFloat=90
     };
     qint32 entity_id;
     ObjectOrVehicleType object_or_vehicle_type;
@@ -579,7 +579,7 @@ public:
         PigMob=90,
         SheepMob=91,
         CowMob=92,
-        ChickenMob=93,
+        ChickenMob=93
     };
 
 
@@ -752,7 +752,7 @@ class PreChunkResponse : public IncomingResponse {
 public:
     enum Mode {
         Unload = 0,
-        Load = 1,
+        Load = 1
     };
     qint32 x;
     qint32 z;
@@ -803,7 +803,7 @@ public:
         SnareDrum=2,
         Sticks=3,
         BassDrum=4,
-        Harp=5,
+        Harp=5
     };
     qint32 meters_x;
     qint16 meters_y;
@@ -831,7 +831,7 @@ public:
         InvalidBed=0,
         BeginRain=1,
         EndRain=2,
-        GameModeChange=3,
+        GameModeChange=3
     };
     qint8 reason;
     qint8 game_mode;

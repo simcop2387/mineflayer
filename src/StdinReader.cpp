@@ -23,7 +23,7 @@ void StdinReader::run()
     bool success;
     success = connect(QCoreApplication::instance(), SIGNAL(aboutToQuit()), this, SLOT(cleanup()));
     Q_ASSERT(success);
-
+    /*
     forever {
         QString line = m_stdin.readLine();
 
@@ -32,5 +32,5 @@ void StdinReader::run()
             break;
         }
         emit readLine(line);
-    }
+    }*/
 }

@@ -23,7 +23,7 @@ public:
 
     enum Dimension {
         NormalDimension = 0,
-        NetherDimension = -1,
+        NetherDimension = -1
     };
 
     enum Control {
@@ -40,7 +40,7 @@ public:
 
     enum StoppedDiggingReason {
         BlockBrokenReason=0,
-        AbortedReason=1,
+        AbortedReason=1
     };
 
     struct StatusEffect {
@@ -67,7 +67,7 @@ public:
             NamedPlayerEntity = 1,
             // TODO: ObjectOrVehicle,
             MobEntity = 3,
-            PickupEntity = 4,
+            PickupEntity = 4
         };
 
         const EntityType type;
@@ -183,6 +183,7 @@ public:
     bool clickInventorySlot(int slot_id, bool right_click); // slot_id [0, 35]
     bool clickUniqueSlot(int slot_id, bool right_click); // slot_id range depends on window
     bool clickOutsideWindow(bool right_click);
+    Item getHeldItem();
 
     void openInventoryWindow();
     void closeWindow();
@@ -293,8 +294,8 @@ private:
 
     QQueue<WindowClick> m_window_click_queue;
 
-    bool m_need_to_emit_window_opened;
     Message::WindowType m_open_window_type;
+    bool m_need_to_emit_window_opened;
 
     QMutex m_click_mutex;
     QWaitCondition m_click_wait_condition;

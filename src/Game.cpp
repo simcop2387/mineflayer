@@ -1381,6 +1381,11 @@ void Game::handleTransaction(int window_id, int action_id, bool accepted)
     m_click_mutex.unlock();
 }
 
+Item Game::getHeldItem()
+{
+    return m_held_item;
+}
+
 void Game::closeWindow()
 {
     QMutexLocker locker(&m_mutex);
