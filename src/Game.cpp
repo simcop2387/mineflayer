@@ -61,6 +61,7 @@ Game::Game(QUrl connection_info) :
     m_next_action_id(0),
     m_equipped_slot_id(0),
     m_open_window_id(-1),
+    m_open_window_type(Message::NoWindow),
     m_need_to_emit_window_opened(false),
     m_player_dimension(NormalDimension)
 {
@@ -1388,6 +1389,7 @@ void Game::closeWindow()
     m_server.sendCloseWindow(m_open_window_id);
 
     m_open_window_id = -1;
+    m_open_window_type = Message::NoWindow;
     m_unique_slots.resize(c_inventory_window_unique_count);
     m_held_item = Item();
 }

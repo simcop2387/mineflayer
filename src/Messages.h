@@ -96,6 +96,7 @@ public:
 
     enum WindowType {
         // ours
+        NoWindow=-2,
         InventoryWindow=-1,
 
         // notch's

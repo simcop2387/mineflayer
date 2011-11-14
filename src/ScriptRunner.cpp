@@ -137,6 +137,8 @@ void ScriptRunner::bootstrap()
     mf_obj.setProperty("clickUniqueSlot", m_engine->newFunction(clickUniqueSlot));
     mf_obj.setProperty("clickOutsideWindow", m_engine->newFunction(clickOutsideWindow));
     mf_obj.setProperty("closeWindow", m_engine->newFunction(closeWindow));
+    mf_obj.setProperty("openWindow", m_engine->newFunction(openWindow));
+
     mf_obj.setProperty("inventoryItem", m_engine->newFunction(inventoryItem));
     mf_obj.setProperty("uniqueWindowItem", m_engine->newFunction(uniqueWindowItem));
     mf_obj.setProperty("canPlaceBlock", m_engine->newFunction(canPlaceBlock));
@@ -983,6 +985,16 @@ QScriptValue ScriptRunner::closeWindow(QScriptContext *context, QScriptEngine *e
 
     me->m_game->closeWindow();
     return QScriptValue();
+}
+
+QScriptValue ScriptRunner::openWindow(QScriptContext *context, QScriptEngine *engine)
+{
+    ScriptRunner * me = (ScriptRunner *) engine->parent();
+    QScriptValue error;
+    if (! me->argCount(context, error, 0))
+        return error;
+
+    return me->m_game->getOpenWindow();
 }
 
 QScriptValue ScriptRunner::inventoryItem(QScriptContext *context, QScriptEngine *engine)
