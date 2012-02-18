@@ -321,6 +321,13 @@ void Game::startDigging(const Int3D &block)
     m_server.sendDiggingStatus(Message::StartDigging, m_digging_location);
     m_digger->start(inventoryItem(m_equipped_slot_id).type, blockAt(m_digging_location).type());
 
+    m_digging_animation_timer = new QTimer(this);
+    m_digging_animation_timer->setInterval(50); // guess
+
+    bool success;
+    success = connect(m_digging_animation_timer, SIGNAL(timeout()), this, SLOT(animateDigging()));
+    Q_ASSERT(success);
+
     m_digging_animation_timer->start();
 }
 

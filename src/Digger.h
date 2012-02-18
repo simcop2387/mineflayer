@@ -20,7 +20,7 @@ public:
     void start(Item::ItemType tool, Item::ItemType block);
     void stop();
 
-    bool isActive() const { return m_timer.isActive(); }
+    bool isActive() const { return m_timer->isActive(); }
 
 signals:
     // emitted when digging has completed
@@ -44,7 +44,7 @@ private:
     Item::ItemType m_tool;
     Item::ItemType m_block;
 
-    QTimer m_timer;
+    QTimer *m_timer;
 
     Game * m_game;
 private:

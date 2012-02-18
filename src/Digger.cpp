@@ -6,12 +6,12 @@ Digger::Digger(Game * game, QObject *parent) :
     m_sum(0),
     m_tool(Item::NoItem),
     m_block(Item::NoItem),
-    m_timer(),
+    m_timer(new QTimer(this)),
     m_game(game)
 {
-    m_timer.setInterval(1000 / 20);
+    m_timer->setInterval(1000 / 20);
     bool success;
-    success = connect(&m_timer, SIGNAL(timeout()), this, SLOT(tick()));
+    success = connect(m_timer, SIGNAL(timeout()), this, SLOT(tick()));
     Q_ASSERT(success);
 
     m_harvest_level.insert(Item::WoodMaterial, 0);
@@ -192,7 +192,15 @@ void Digger::start(Item::ItemType tool, Item::ItemType block)
     m_sum = 0;
     m_tool = tool;
     m_block = block;
-    m_timer.start();
+
+    m_timer = new QTimer(this);
+
+    m_timer->setInterval(1000 / 20);
+    bool success;
+    success = connect(m_timer, SIGNAL(timeout()), this, SLOT(tick()));
+    Q_ASSERT(success);
+
+    m_timer->start();
 }
 
 void Digger::tick()
@@ -208,5 +216,5 @@ void Digger::tick()
 
 void Digger::stop()
 {
-    m_timer.stop();
+    m_timer->stop();
 }
