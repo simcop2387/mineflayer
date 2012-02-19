@@ -94,7 +94,7 @@ void Server::sendRespawnRequest(int world)
 }
 void Server::sendDiggingStatus(Message::DiggingStatus status, const Int3D &coord)
 {
-    sendMessage(QSharedPointer<OutgoingRequest>(new PlayerDiggingRequest(status, coord.x, coord.y, coord.z, Message::PositiveY)));
+    sendMessage(QSharedPointer<OutgoingRequest>(new PlayerDiggingRequest(status, coord.x, coord.y, coord.z, Message::NoDirection)));
 }
 
 void Server::sendBlockPlacement(const Int3D &coord, Message::BlockFaceDirection face, Item block)
